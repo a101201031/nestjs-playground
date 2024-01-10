@@ -34,8 +34,8 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     'no-underscore-dangle': 'off',
-    // 'no-useless-constructor': 'off',
-    // 'no-empty-function': 'off',
+    'no-useless-constructor': 'off',
+    'no-empty-function': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
