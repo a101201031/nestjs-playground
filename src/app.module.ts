@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
+import { AuthModule } from '@src/auth';
+import { JwtAuthGuard } from '@src/common';
+import { UsersModule } from '@src/users';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
-import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [AuthModule, UsersModule],
@@ -13,7 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
     AppService,
     {
       provide: APP_GUARD,
-      useClass: AuthGuard,
+      useClass: JwtAuthGuard,
     },
   ],
 })
